@@ -1,7 +1,9 @@
-POST http://localhost:8080/message/topic1
+###
+POST http://localhost:8080/message/topic2
 Content-Type: application/json
 
 {
   "id": 1,
-  "content": "message content"
+  "content": "content2"
 }
+###

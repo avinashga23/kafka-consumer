@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * The type Message controller.
+ */
 @RestController
 @RequiredArgsConstructor(onConstructor_ = {@Autowired})
 @RequestMapping("/message")
@@ -19,6 +22,13 @@ class MessageController {
 
   private final MessageSender messageSender;
 
+  /**
+   * Send message string.
+   *
+   * @param topic   the topic
+   * @param message the message
+   * @return the string
+   */
   @PostMapping("/{topic}")
   String sendMessage(@PathVariable String topic, @RequestBody Message message) {
     log.info("sending message {} to topic {}", message, topic);
